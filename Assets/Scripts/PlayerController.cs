@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Mirror;
 
 /*public delegate void OnJumpDelegate();*/
-public class PlayerController : NetworkBehaviour, IDamageable
+public class PlayerController : MonoBehaviour, IDamageable
 {
     public float speed = 5.0f;
     public int playerHealth = 100;
@@ -45,7 +44,6 @@ public class PlayerController : NetworkBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer) return;
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
